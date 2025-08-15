@@ -5,32 +5,46 @@
 @tailwind utilities;
 
 :root {
-  --app-background: #ffffff;
-  --app-foreground: #111111;
-  --app-foreground-muted: #58585c;
-  --app-accent: #0052ff;
-  --app-accent-hover: #0047e1;
-  --app-accent-active: #003db8;
-  --app-accent-light: #e6edff;
-  --app-gray: #f5f5f5;
-  --app-gray-dark: #e0e0e0;
-  --app-card-bg: rgba(255, 255, 255, 0.4);
-  --app-card-border: rgba(0, 0, 0, 0.1);
+  /* Windows XP Color Scheme */
+  --app-background: linear-gradient(135deg, #add8e6 0%, #87ceeb 25%, #4682b4 100%);
+  --app-background-solid: #ece9d8;
+  --app-foreground: #000000;
+  --app-foreground-muted: #666666;
+  --app-accent: #316ac5;
+  --app-accent-hover: #245a9c;
+  --app-accent-active: #1e4a82;
+  --app-accent-light: #bfcfff;
+  --app-gray: #f0f0f0;
+  --app-gray-dark: #e1e1e1;
+  --app-card-bg: #ece9d8;
+  --app-card-border: #aca899;
+  --app-window-border: #0054e3;
+  --app-button-bg: linear-gradient(180deg, #ffffff 0%, #ece9d8 50%, #d6d3ce 100%);
+  --app-button-border: #aca899;
+  --app-shadow: rgba(0, 0, 0, 0.3);
+  --app-inset-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.8), inset -1px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --app-background: #111111;
-    --app-foreground: #ffffff;
-    --app-foreground-muted: #c8c8d1;
-    --app-accent: #0052ff;
-    --app-accent-hover: #0047e1;
-    --app-accent-active: #003db8;
-    --app-accent-light: #1e293b;
-    --app-gray: #1e1e1e;
-    --app-gray-dark: #2e2e2e;
-    --app-card-bg: rgba(17, 17, 17, 0.4);
-    --app-card-border: rgba(115, 115, 115, 0.5);
+    /* Keep XP theme even in dark mode preference */
+    --app-background: linear-gradient(135deg, #add8e6 0%, #87ceeb 25%, #4682b4 100%);
+    --app-background-solid: #ece9d8;
+    --app-foreground: #000000;
+    --app-foreground-muted: #666666;
+    --app-accent: #316ac5;
+    --app-accent-hover: #245a9c;
+    --app-accent-active: #1e4a82;
+    --app-accent-light: #bfcfff;
+    --app-gray: #f0f0f0;
+    --app-gray-dark: #e1e1e1;
+    --app-card-bg: #ece9d8;
+    --app-card-border: #aca899;
+    --app-window-border: #0054e3;
+    --app-button-bg: linear-gradient(180deg, #ffffff 0%, #ece9d8 50%, #d6d3ce 100%);
+    --app-button-border: #aca899;
+    --app-shadow: rgba(0, 0, 0, 0.3);
+    --app-inset-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.8), inset -1px -1px 0px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -41,15 +55,131 @@
 body {
   color: var(--app-foreground);
   background: var(--app-background);
-  font-family: var(--font-geist-sans), sans-serif;
+  font-family: "Tahoma", "Arial", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  font-size: 11px;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .xp-window {
+    background: var(--app-card-bg);
+    border: 2px solid var(--app-card-border);
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+    box-shadow: 2px 2px 4px var(--app-shadow);
+  }
+  
+  .xp-button {
+    background: var(--app-button-bg);
+    border: 1px solid var(--app-button-border);
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+    box-shadow: var(--app-inset-shadow);
+    font-family: "Tahoma", sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+  }
+  
+  .xp-button:hover {
+    border-color: #316ac5;
+    background: linear-gradient(180deg, #ffffff 0%, #e6f3ff 50%, #cce7ff 100%);
+  }
+  
+  .xp-button:active {
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+    box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.8), inset 1px 1px 0px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(180deg, #d6d3ce 0%, #ece9d8 50%, #ffffff 100%);
+  }
+  
+  .xp-title-bar {
+    background: linear-gradient(180deg, #0054e3 0%, #0041c2 50%, #002f91 100%);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-top: 1px solid #5c93d5;
+  }
+  
+  .xp-panel {
+    background: var(--app-card-bg);
+    border: 1px solid var(--app-card-border);
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #aca899;
+    border-bottom-color: #aca899;
+  }
+  
+  .xp-input {
+    background: #ffffff;
+    border: 2px inset #ece9d8;
+    font-family: "Tahoma", sans-serif;
+    font-size: 11px;
+    padding: 2px 4px;
+  }
+  
+  .xp-scrollbar::-webkit-scrollbar {
+    width: 16px;
+  }
+  
+  .xp-scrollbar::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border: 1px solid #aca899;
+  }
+  
+  .xp-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ffffff 0%, #ece9d8 50%, #d6d3ce 100%);
+    border: 1px solid #aca899;
+    border-radius: 0;
+  }
+  
+  .xp-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ffffff 0%, #e6f3ff 50%, #cce7ff 100%);
+  }
+  
+  .xp-menu-item {
+    padding: 4px 8px;
+    font-size: 11px;
+    transition: background-color 0.1s;
+  }
+  
+  .xp-menu-item:hover {
+    background: #316ac5;
+    color: #ffffff;
+  }
+  
+  .xp-status-bar {
+    background: var(--app-card-bg);
+    border-top: 1px solid #aca899;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    font-size: 11px;
+  }
+  
+  /* Classic Windows XP blue gradient for selected items */
+  .xp-selected {
+    background: linear-gradient(180deg, #316ac5 0%, #245a9c 100%);
+    color: #ffffff;
+  }
+  
+  /* XP-style focus ring */
+  .xp-focus {
+    outline: 1px dotted #000000;
+    outline-offset: -2px;
   }
 }
 
