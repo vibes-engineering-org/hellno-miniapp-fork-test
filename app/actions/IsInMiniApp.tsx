@@ -1,5 +1,5 @@
 "use client";
-import { useIsInMiniApp } from "@coinbase/onchainkit/minikit";
+import { useIsInMiniApp } from "../../lib/minikit-stubs";
 
 export function IsInMiniApp() {
   const { isInMiniApp } = useIsInMiniApp();

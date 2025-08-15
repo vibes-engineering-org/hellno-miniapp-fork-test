@@ -1,18 +1,18 @@
 "use client";
-import { useMiniKit, useOpenUrl } from "@coinbase/onchainkit/minikit";
+import { useMiniKit, useOpenUrl } from "../lib/minikit-stubs";
 import {
   Name,
   Identity,
   Address,
   Avatar,
   EthBalance,
-} from "@coinbase/onchainkit/identity";
+} from "../lib/identity-stubs";
 import {
   ConnectWallet,
   Wallet,
   WalletDropdown,
   WalletDropdownDisconnect,
-} from "@coinbase/onchainkit/wallet";
+} from "../lib/wallet-stubs";
 import { useEffect } from "react";
 import { Button } from "./ui/Button";
 import { IsInMiniApp } from "./actions/IsInMiniApp";

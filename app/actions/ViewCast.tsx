@@ -1,5 +1,5 @@
 "use client";
-import { useViewCast, useIsInMiniApp } from "@coinbase/onchainkit/minikit";
+import { useViewCast, useIsInMiniApp } from "../../lib/minikit-stubs";
 import { Button } from "../ui/Button";
 
 export function ViewCast() {

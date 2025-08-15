@@ -1,5 +1,5 @@
 "use client";
-import { useSendToken, useIsInMiniApp } from "@coinbase/onchainkit/minikit";
+import { useSendToken, useIsInMiniApp } from "../../lib/minikit-stubs";
 import { Button } from "../ui/Button";
 
 export function SendToken() {

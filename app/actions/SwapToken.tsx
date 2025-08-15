@@ -1,5 +1,5 @@
 "use client";
-import { useSwapToken, useIsInMiniApp } from "@coinbase/onchainkit/minikit";
+import { useSwapToken, useIsInMiniApp } from "../../lib/minikit-stubs";
 import { Button } from "../ui/Button";
 
 export function SwapToken() {

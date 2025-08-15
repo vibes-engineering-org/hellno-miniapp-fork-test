@@ -1,5 +1,5 @@
 "use client";
-import { useClose, useIsInMiniApp } from "@coinbase/onchainkit/minikit";
+import { useClose, useIsInMiniApp } from "../../lib/minikit-stubs";
 import { Button } from "../ui/Button";
 
 export function CloseFrame() {

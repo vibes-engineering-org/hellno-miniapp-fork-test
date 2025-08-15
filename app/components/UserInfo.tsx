@@ -1,6 +1,7 @@
-import { useIsInMiniApp } from "@coinbase/onchainkit/minikit";
+import { useIsInMiniApp } from "../../lib/minikit-stubs";
 import sdk from "@farcaster/frame-sdk";
 import { useQuery } from "@tanstack/react-query";
+import Image from "next/image";
 
 function useUserInfo() {
   const { isInMiniApp } = useIsInMiniApp();
@@ -58,10 +59,12 @@ export function UserInfo() {
       <div className="flex items-start space-x-4">
         {/* Profile Picture */}
         {data.pfpUrl && (
-          <img
+          <Image
             src={data.pfpUrl}
             alt={`${data.displayName}'s profile picture`}
-            className="w-16 h-16 rounded-full object-cover border-2 border-[var(--app-card-border)]"
+            width={64}
+            height={64}
+            className="rounded-full object-cover border-2 border-[var(--app-card-border)]"
           />
         )}
 
